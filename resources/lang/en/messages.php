@@ -21,6 +21,8 @@ return [
     'edit_member' => 'Edit member',
     'field_user' => 'Linked user (optional)',
     'field_user_hint' => 'Link a site account to pull its avatar and profile link.',
+    'search_user' => 'Search by username…',
+    'no_users' => 'No matching users.',
     'field_name' => 'Display name',
     'field_role' => 'Role label',
     'field_group' => 'Group / section',

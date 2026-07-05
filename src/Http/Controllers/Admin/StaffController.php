@@ -3,7 +3,9 @@
 namespace Hybridcore\Staff\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Hybridcore\Staff\Models\StaffMember;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -36,6 +38,30 @@ class StaffController extends Controller
         return Inertia::render('Extensions/hybridcore/staff/Admin/Index', [
             'members' => $members,
         ]);
+    }
+
+    /** Autocomplete for the "linked user" picker. */
+    public function users(Request $request): JsonResponse
+    {
+        $term = trim((string) $request->query('q', ''));
+
+        $users = User::query()
+            ->whereNull('banned_at')
+            ->whereNotNull('username')
+            ->when($term !== '', fn ($q) => $q->where(fn ($w) => $w
+                ->where('username', 'like', '%'.$term.'%')
+                ->orWhere('display_name', 'like', '%'.$term.'%')))
+            ->orderBy('username')
+            ->limit(10)
+            ->get(['id', 'username', 'display_name', 'avatar'])
+            ->map(fn (User $u) => [
+                'id' => $u->id,
+                'username' => $u->username,
+                'display_name' => $u->display_name ?: $u->username,
+                'avatar' => $u->avatar,
+            ]);
+
+        return response()->json(['users' => $users]);
     }
 
     public function store(Request $request): RedirectResponse

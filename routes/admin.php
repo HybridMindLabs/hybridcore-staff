@@ -9,6 +9,7 @@ Route::get('/staff', [StaffController::class, 'index'])
     ->name('admin.staff.index');
 
 Route::middleware('perm:staff.manage')->group(function (): void {
+    Route::get('/staff/users', [StaffController::class, 'users'])->name('admin.staff.users');
     Route::post('/staff', [StaffController::class, 'store'])->name('admin.staff.store');
     Route::put('/staff/{member}', [StaffController::class, 'update'])->name('admin.staff.update');
     Route::delete('/staff/{member}', [StaffController::class, 'destroy'])->name('admin.staff.destroy');
