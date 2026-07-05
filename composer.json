@@ -1,0 +1,46 @@
+{
+    "name": "hybridmindlabs/hybridcore-staff",
+    "description": "Official Staff extension for HybridCore — show off your community team on a public page with grouped, ordered members, roles, bios and social links.",
+    "type": "hybridcore-extension",
+    "license": "proprietary",
+    "homepage": "https://github.com/HybridMindLabs/hybridcore-staff",
+    "authors": [
+        {
+            "name": "HybridMind Labs",
+            "homepage": "https://github.com/HybridMindLabs"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/HybridMindLabs/hybridcore-staff/issues",
+        "source": "https://github.com/HybridMindLabs/hybridcore-staff"
+    },
+    "keywords": [
+        "hybridcore",
+        "hybridcore-extension",
+        "staff",
+        "team",
+        "gaming",
+        "community"
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hybridcore\\Staff\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hybridcore\\Staff\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "hybridcore": {
+            "id": "hybridcore/staff"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a problem with the Staff extension
+labels: ["bug"]
+body:
+  - type: input
+    id: core-version
+    attributes:
+      label: HybridCore version
+      placeholder: "0.3.0"
+    validations:
+      required: true
+  - type: input
+    id: ext-version
+    attributes:
+      label: Staff extension version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Paste anything from storage/logs/laravel.log related to the issue.
+      render: shell

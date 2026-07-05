@@ -1,0 +1,20 @@
+{
+    "id": "hybridcore/staff",
+    "name": "Staff",
+    "version": "1.0.0",
+    "description": "Show off your community team on a public staff page — grouped, ordered members with roles, bios and social links.",
+    "author": "HybridMind Labs",
+    "type": "official",
+    "provider": "Hybridcore\\Staff\\StaffServiceProvider",
+    "routes": {
+        "web": "routes/web.php",
+        "admin": "routes/admin.php"
+    },
+    "migrations": "database/migrations",
+    "lang": "resources/lang",
+    "lang_namespace": "staff",
+    "requires": {
+        "core": ">=0.3.0"
+    },
+    "seeder": "Hybridcore\\Staff\\Database\\Seeders\\DefaultSeeder"
+}

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: HybridCore core repository
+    url: https://github.com/HybridMindLabs/HybridCore
+    about: For issues with HybridCore itself rather than the Staff extension.
