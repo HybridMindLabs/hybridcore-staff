@@ -5,6 +5,13 @@ All notable changes to the HybridCore Staff extension are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+- The Steam field is now validated as a URL — it was stored as a plain
+  string but rendered as a direct link on the public page, so a non-URL
+  value produced a broken link.
+
 ## [1.0.0] - 2026-07-05
 
 ### Added

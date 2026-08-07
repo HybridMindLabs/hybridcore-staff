@@ -97,7 +97,7 @@ class StaffController extends Controller
             'avatar' => ['nullable', 'url', 'max:500'],
             'color' => ['nullable', 'string', 'max:20'],
             'discord' => ['nullable', 'string', 'max:120'],
-            'steam' => ['nullable', 'string', 'max:120'],
+            'steam' => ['nullable', 'url', 'max:255'],
             'is_active' => ['boolean'],
             'sort' => ['integer', 'min:0', 'max:9999'],
         ]);
